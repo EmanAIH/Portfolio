@@ -18,6 +18,5 @@ A responsive portfolio website to showcase my skills, projects, and contact info
 
 ## 📬 Contact  
 Feel free to connect with me:  
-- LinkedIn: 
-- GitHub: 
+- LinkedIn: https://www.linkedin.com/in/eman-a-1668b1160/
 
