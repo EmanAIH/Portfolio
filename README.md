@@ -12,7 +12,6 @@ A responsive portfolio website to showcase my skills, projects, and contact info
 
 ## ✨ Features  
 - Fully responsive design 🌍
-- Dark/Light Mode 🌙  
 - Interactive project showcase 📂  
 - Fast and optimized performance ⚡  
 
