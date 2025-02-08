@@ -1,149 +1,149 @@
-/*  General styles*/
-
+/****   General  styles         ***/
 body{
-    margin:0;
-    padding:0; 
+    margin: 0;
+    padding: 0;
     font-family: "Plus Jakarta Sans", serif;
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
-}
-
-h1, h2, h3, h4, h5 , h6{
-    font-family: "Covered By Your Grace", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    cursor: pointer;
-}
-
-
-
-/*  Header */
-header{
-    background-color: #F5F5F5;
-    
-}
-nav ul{
-    list-style-type:none;
-    padding:0;
-    margin:0;
     display: flex;
-   justify-content: space-between;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    color: #3A3960;
+    background: linear-gradient(to right, #F5EFFF, #DCCEFF);
+
 
 }
 
-nav ul a{
-    color: #333;
-    padding: 14px 16px;
-    display: block;
-    padding: 20px;
-}
-
-nav ul a:hover{
-    background-color: #DAD2FF;
+button, input{
+    font-family: "Plus Jakarta Sans", serif;
 }
 
 
-/*  Intro */
+h1, h2, h3{
+    font-family: "Karla", serif;
+    font-weight: 400;
+}
 
-#home{
-    height: 70%;
+h1{
+    font-size: 2rem;
+}
+
+
+
+/***      Main       **/
+
+main{
+    background-color:#CDC1FF ;
+    padding:4em;
+    border-radius: 1em;
+    color: #3A3960;
+    box-shadow: 4px 4px 20px rgba(60, 50, 100, 0.2);
+
+    max-width: 90%; /* Prevents it from getting too wide */
+    width: 500px; /* Default size */
+    text-align: center;
+    /* height: 500px; */
+    max-height:90% ;
+
+}
+
+main:hover {
+    transform: translateY(-5px);
+}
+
+
+
+form input, form button{
+    padding: 0.75em;
+    margin: 1em 0;
+    border-radius: 0.5em;
+    border: 2px solid transparent;
+    color: #3A3960;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #FFF;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+form input{
+    margin-right: 0.7em;
+}
+form input:focus {
+    border-color: #6B5EFF;
+    outline: none;
+    box-shadow: 0 0 10px rgba(107, 94, 255, 0.4);
+}
+
+form button {
+    background: linear-gradient(45deg, #6B5EFF, #8F75FF);
+    color: white;
+    font-weight: bold;
+}
+
+form button:hover{
+    opacity: 0.7;
+    transform: scale(1.05);
+
+}
+
+form input:hover{
+    opacity: 0.8;
+    transform: scale(1.05);
+
+}
+
+
+form div{
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content:center;
-    align-items: center;
-    font-size: larger;
-}
-
-#home a{
-    text-decoration: none;
-    color: white;
-    padding: 15px;
-    background-color: #4B164C;
-    border-radius: 1.5rem;
-}
-
-
-#home a:hover{
-    opacity:0.6;
-}
-
-
-/*  about */
-
-#about{
-    height: 40%;
-    background-color: #DAD2FF;
-    padding:4em;
-    text-align:center;
-    justify-content:center;
-}
-
-
-
-/*  projects */
-
-#projects{
-    background-color: antiquewhite;
-    padding: 1.5em;
-}
-
-.projects-div{
-    display: flex;
     justify-content: space-between;
-    padding: 3em;
 
 }
 
-.project{
-    color: #333;
+
+
+
+/***  Weather Display   ***/
+
+#cityDisplay, #temperatureDisplay, #weatherConditionDisplay, #humidityDisplay {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+main:has(#cityDisplay:not(:empty)) #cityDisplay,
+main:has(#temperatureDisplay:not(:empty)) #temperatureDisplay,
+main:has(#weatherConditionDisplay:not(:empty)) #weatherConditionDisplay,
+main:has(#humidityDisplay:not(:empty)) #humidityDisplay {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
-.project a{
-    text-decoration: none;
-    color: #333;
-    padding:0.5rem;
-    margin-top:0.7rem;
-    background-color:white;
-    border-radius:0.30rem
-}
 
-.project a:hover{
-    cursor: pointer;
-    opacity:0.8;
-    
-}
 
-/*  contact */
+/** Responsive **/
+@media (max-width: 650px) {
+    main {
+        padding: 1em; 
+        /* height: 100%; */
+        margin: 1em;
+    }
 
-#contact{
-    padding: 0;
-    margin: 0;
-    background-color: #4B164C;
-    color: white;
-    padding: 40px 20px; /* Reduce padding */
-    margin: 0 auto; /* Remove extra margin */
-    text-align:center;
+    form {
+        display: flex;
+        flex-direction: column; 
+        
+    }
+    form input{
+        margin-right: 0em;
+    }
 
-}
-
-#contact a{
-    padding:0.5rem;
-    margin:0.7rem;
-    background-color:white;
-    border-radius:0.30rem
-}
-
-#contact a:hover{
-   opacity:0.8;
+    form input, form button {
+        padding: 1em;
+        margin-bottom: 1em;
+    }
 }
