@@ -1,194 +1,164 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
-
-
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
+/*  General styles*/
 
 body{
-    font-family: "Kumbh Sans", serif;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Allow scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
-    height: 100vh;
+    margin:0;
+    padding:0; 
+    font-family: "Plus Jakarta Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.container{
-    max-width: 600px;
-    background-color: white;
-    margin: 2em auto;
-    padding: 2em;
-    border-radius: 0.5rem;
-    box-shadow:  10px 10px 20px rgba(0, 0, 0, 0.2);
-    /* height: 90vh; */
-    overflow-y: visible;
-    max-height: 90vh; /* Limit height */
-    overflow-y: auto; /* Allow scrolling inside container */
-
+h1, h2, h3, h4, h5 , h6{
+    font-family: "Covered By Your Grace", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
-
-.container input, .container button{
-    width: 100%;
-    margin: 0.5rem 0;
-    padding: 0.8rem;
-    font-family: "Kumbh Sans", serif;
-    cursor: pointer;
-}
-
-.container input {
-    border: 1px solid #ccc;
-}
-
-.container input:focus{
-    border-color: #007bff;
-    box-shadow: 3px 3px 5px rgba(0, 123, 255, 0.5);
-}
-
-.container button{
-    background-color: #f8f9fa;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow:  3px 3px 10px 3px rgba(0, 0, 0, 0.25);
-}
-
-.container button:hover{
-    background-color: #e8e9eb;
-    transform: scale(1.05);
-}
-
-
-
-
-
-/***    Modal styles     ***/
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-}
-
-.modal-content h3,  .modal-content p{
-    margin-bottom: 1rem;
-    letter-spacing: 0.7px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
+a {
     text-decoration: none;
+}
+
+a:hover {
     cursor: pointer;
 }
 
 
 
-/* Style Recipe List */
-#recipes-container ul {
-    margin-top: 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* 2 items per column */
-    gap: 1rem;
+/*  Header */
+header{
+    background-color: #F5F5F5;
+    
+}
+nav ul{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    display: flex;
+   justify-content: space-between;
+
 }
 
-#recipes-container h3 {
-    margin-bottom: 0.5rem;
+nav ul a{
+    color: #333;
+    padding: 14px 16px;
+    display: block;
+    padding: 20px;
+}
+
+nav ul a:hover{
+    background-color: #DAD2FF;
+}
+
+
+/*  Intro */
+
+#home{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+    font-size: larger;
+}
+
+#home a{
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    background-color: #4B164C;
+    border-radius: 1.5rem;
+}
+
+
+#home a:hover{
+    opacity:0.6;
+}
+
+
+/*  about */
+
+#about{
+    height: 40%;
+    background-color: #DAD2FF;
+    padding:4em;
+    text-align:center;
+    justify-content:center;
+}
+
+
+
+/*  projects */
+
+#projects{
+    background-color: antiquewhite;
+    padding: 1.5em;
+    font-weight: 500;
+}
+
+.projects-div{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min width as needed */
+        grid-auto-rows: auto; /* Allows flexible row heights */
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 20px;
+}
+
+.project{
     color: #333;
 }
 
-/* Remove bullet points properly */
-#recipe-list,
-#favorite-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
+.project img{
+    width: 250px;
+    max-height: 250px;
+    object-fit:contain;
+    border-radius: 0.5rem;
 }
 
-/* Style individual recipe items */
-#recipe-list li,
-#favorite-list li {
-    background: #f1f1f1;
-    text-align: center;
-    padding: 0.8rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-#recipe-list li h4 {
-    font-size: 1.1rem;
-    color: #130b0b;
-    font-weight: 400;
-}
-
-#recipe-list li img {
-    width: 90px;
-    height: 80px;
-    border-radius: 10px;
-    margin: 1rem 0;
-}
-
-/* Style buttons inside list */
-.favorite-btn,
-#recipe-list li button {
-    background: #ffc107;
-    border: none;
+.project img:hover{
     cursor: pointer;
-    padding: 0.4rem 0.8rem;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    transition: 0.3s;
+    transform: scale(1.25);
+    transition: all 3 ease-in;
 }
 
-.favorite-btn:hover,
-#recipe-list li button:hover {
-    background: #e0a800;
-    transform: scale(1.05);
+
+.project-a {
+    text-decoration: none;
+    color: #333;
+    padding:0.5rem;
+    margin-top:0.7rem;
+    background-color:white;
+    border-radius:0.30rem
 }
 
-/* Favorite section */
+.project-a:hover{
+    cursor: pointer;
+    opacity:0.8;
+}
 
-#favorite-list li button {
-    background: red;
+/*  contact */
+
+#contact{
+    padding: 0;
+    margin: 0;
+    background-color: #4B164C;
     color: white;
-    font-size: 0.8rem;
-    margin-left: 8px;
-    padding: 0.4rem 0.6rem;
-    width: 50%;
+    padding: 40px 20px; 
+    margin: 0 auto; 
+    text-align:center;
+
 }
 
-#favorite-list li button:hover {
-    background: darkred;
+#contact a{
+    padding:0.5rem;
+    margin:0.7rem;
+    background-color:white;
+    border-radius:0.30rem
+}
+
+#contact a:hover{
+   opacity:0.8;
 }
