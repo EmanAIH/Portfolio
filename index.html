@@ -1,31 +1,127 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Game</title>
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <main>
-        <div class="game-container">
-            <h1>Memory Game</h1>
-            <div class="controls">
-                <button id="startBtn">Start Game</button>
-                <div>Time: <span id="timeDisplay">0</span> seconds</div>
-                <div>Moves: <span id="moveCount">0</span></div>
-              </div>
-            <div id="board">
+     <!-- Navigation Bar -->
+     <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                <!-- Board will be dynamically generated here by  -->
+    <!-- (Introduction) -->
+    <section id="home">
+        <h1>Hi, I'm Eman</h1>
+        <p id="intro-text"></p>
+        <a href="#projects">View My Work</a>
+    </section>
+
+    <!--  About Me -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-conatiner">
+            <div class="skills">
+            </div>
+            <div class="experience">
+                <h3>Experience</h3>
+                I specialize in HTML, CSS, and JavaScript, with some experience in Python and Java. I focus on front-end development, but I'm also exploring full-stack concepts.
+                <br> <br>
+
+                I’ve worked on projects like a recipe search app that lets users find recipes based on ingredients, view details in a pop-up, and save favorites using local storage. 
+                <br> <br>
+                I enjoy working with APIs, adding dynamic elements to web apps, and improving user experience. Right now, I’m focused on improving my JavaScript skills and building projects that show my ability to create engaging web applications.
             </div>
         </div>
-    </main>
+
+    </section>
+
+    <!-- 💻 Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-div">
+            <div class="project pro1">
+                <a href="https://weather-forecast-lovat-beta.vercel.app/" class = "project-image" target="_blank">
+                    <img src="images/project1.png" alt="Project 1 Weather-Forecast app">
+                </a>
+                <h3>Weather Forecast Website</h3>
+                <p>A responsive weather application that fetches real-time weather data using the OpenWeather API. Built with HTML, CSS, and JavaScript.</p>
+                <p>  Tech Stack: HTML, CSS, JavaScript, OpenWeather API</p>
+                <a href="https://github.com/EmanAIH/Weather-Forecast" class="project-a" target="_blank"> Github</a>
+
+            </div>
+            <div class="project pro2">
+                <a href="https://github.com/EmanAIH/Personal-Finance-Tracker/blob/main/FinanceTracker.py" class = "project-image" target="_blank">
+                    <img src="images/project2.png" alt="Project2 Personal-Finance-Tracker ">
+                </a>                
+                <h3>Personal Finance Tracker                </h3>
+                <p>This Python application allows users to manage their personal finances by adding, viewing, and saving financial records. 
+                    <br>
+                    <br>
+                    Tech Stack: Python, Tkinter (GUI), and JSON (Data storage).</p>
+                <a href="https://github.com/EmanAIH/Personal-Finance-Tracker" class="project-a" target="_blank">Github</a>
+
+            </div>
+            <div class="project pro3">
+                <a href="https://tic-tac-toe-game-jet-six.vercel.app/" class = "project-image" target="_blank">
+                    <img src="images/project3.png" alt="Project3 Tic-Tac-Toe-game">
+                </a>
+               <h3>Tic-Tac-Toe-game </h3>
+                <p>A simple and interactive Tic-Tac-Toe game built with HTML, CSS, and JavaScript. The game allows two players to take turns and see who wins or if the game ends in a draw. 
+                <br> <br> Tech Stack: HTML, CSS, JavaScript</p>
+                <a href="https://github.com/EmanAIH/Tic-Tac-Toe-game" class="project-a" target="_blank">Github</a>
+            </div>
+            <div class="project pro4">
+                <a href="https://recipe-finder-app-nu-ashen.vercel.app/" class = "project-image" target="_blank">
+                    <img src="images/project4.png" alt="Project4 Recipe-Finder-App">
+                </a>                
+                <h3>Recipe Finder App</h3>
+                <p>A dynamic recipe search application that leverages the Spoonacular API to deliver personalized cooking suggestions.         <br> <br>Tech Stack: HTML, CSS, JavaScript Spoonacular API and localStorage 
+               .</p>
+                <a href="https://github.com/EmanAIH/Recipe-Finder-App" class="project-a" target="_blank">Github</a>
+            </div>
+            <div class="project pro5">
+                <a href="https://memory-game-beta-woad.vercel.app/" class = "project-image" target="_blank">
+                    <img src="images/project5.png" alt="Project5 memory-game">
+                </a>
+                <h3>Memory Card Game</h3>
+                <p>A memory card game built with HTML, CSS, and JavaScript. It features a move counter, a timer, and responsive design for both desktop and mobile devices.
+                    <br> <br>
+                Tech Stack: HTML, CSS, JavaScript</p>
+                <a href="https://github.com/EmanAIH/memory-game" class="project-a" target="_blank">Github</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 📬 Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: ibeman851@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/eman-a-1668b1160/" target="_blank">  Click Here</a></p>
+   
+    </section>
+
+    <!-- 📜 Footer -->
 
 
-    <footer>
-        <a href="https://www.flaticon.com/free-icons/fruit" title="fruit icons">Fruit icons created by Freepik - Flaticon</a>
-    </footer>
-    <script src="/script.js"></script>
+   
+   
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
 </body>
+
 </html>
