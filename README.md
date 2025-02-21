@@ -17,8 +17,11 @@ https://portfolio-kappa-sooty-41.vercel.app/
 
 ## Screenshots  
 - Homepage: 
-  
+  ![screenshot of portfolio](images/Screenshot portfolio.PNG)
+
 - Projects Section:
+    ![screenshot of project section](images/projects-section.PNG)
+
 
 ## 📬 Contact  
 Feel free to connect with me:  
