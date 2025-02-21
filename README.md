@@ -1,19 +1,24 @@
-##  Portfolio Website  
+# Portfolio Website
+Welcome to my portfolio! This showcases my projects in front-end development, built using HTML, CSS and JavaScript. My focus is on creating clean, responsive, and user-friendly applications.
 
-A responsive portfolio website to showcase my skills, projects, and contact information. Built with HTML JS,  CSS, and deployed on Vercel.  
+## Projects Included
+- Weather App:  Fetches real-time weather data using an API.
+- Memory Game: A fun, personalized game built with HTML, CSS, and JavaScript.
+- Recipe Finder: Search recipes by ingredients and manage favorites with localStorage.
+- Tic-Tac-Toe-game: A simple and interactive Tic-Tac-Toe game built with HTML, CSS, and JavaScript
+- Personal Finance Tracker: Simple Python application that allows users to manage their personal finances.
+More projects coming soon...
+
+## Skills: 
+JavaScript, HTML, CSS, Python, APIs, Responsive Design
 
 ## Live Demo:
-(https:) 
+https://portfolio-kappa-sooty-41.vercel.app/
 
 ## Screenshots  
-- Homepage:
+- Homepage: 
+  
 - Projects Section:
-
-
-## ✨ Features  
-- Fully responsive design 🌍
-- Interactive project showcase 📂  
-- Fast and optimized performance ⚡  
 
 ## 📬 Contact  
 Feel free to connect with me:  
