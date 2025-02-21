@@ -17,10 +17,10 @@ https://portfolio-kappa-sooty-41.vercel.app/
 
 ## Screenshots  
 ###  Homepage: 
-   ![screenshot of portfolio](https://github.com/EmanAIH/Portfolio/blob/main/images/Screenshot%20portfolio.PNG)
+![screenshot of portfolio](https://github.com/EmanAIH/Portfolio/blob/main/images/Screenshot%20portfolio.PNG)
 
 ### Projects Section:
-    ![screenshot of project section](images/projects-section.PNG)
+![screenshot of project section](https://github.com/EmanAIH/Portfolio/blob/main/images/projects-section.PNG)
 
 
 ## 📬 Contact  
