@@ -1,5 +1,5 @@
 # Portfolio Website
-Welcome to my portfolio! This showcases my projects in front-end development, built using HTML, CSS and JavaScript. My focus is on creating clean, responsive, and user-friendly applications.
+Welcome to my portfolio! This shows my projects in front-end development, built using HTML, CSS and JavaScript. My focus is on creating clean, responsive, and user-friendly applications.
 
 ## Projects Included
 - Weather App:  Fetches real-time weather data using an API.
@@ -17,7 +17,7 @@ https://portfolio-kappa-sooty-41.vercel.app/
 
 ## Screenshots  
 - Homepage: 
-  ![screenshot of portfolio](images/Screenshot portfolio.PNG)
+   ![screenshot of portfolio](images/Screenshotportfolio.PNG)
 
 - Projects Section:
     ![screenshot of project section](images/projects-section.PNG)
