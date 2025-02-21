@@ -16,10 +16,10 @@ JavaScript, HTML, CSS, Python, APIs, Responsive Design
 https://portfolio-kappa-sooty-41.vercel.app/
 
 ## Screenshots  
-- Homepage: 
-   ![screenshot of portfolio](images/Screenshotportfolio.PNG)
+###  Homepage: 
+   ![screenshot of portfolio](https://github.com/EmanAIH/Portfolio/blob/main/images/Screenshot%20portfolio.PNG)
 
-- Projects Section:
+### Projects Section:
     ![screenshot of project section](images/projects-section.PNG)
 
 
