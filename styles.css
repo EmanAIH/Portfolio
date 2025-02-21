@@ -1,229 +1,127 @@
-/*  General styles*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
-    margin:0;
-    padding:0; 
-    font-family: "Plus Jakarta Sans", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-h1, h2, h3, h4, h5 , h6{
-    font-family: "Covered By Your Grace", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    cursor: pointer;
-}
-
-
-/** Dark mode **/
-
-.dark-mode a:not(:has(img)) {
-    color: white;
-    background-color: #1e1e1e;
-}
-
-.dark-mode nav {
-    background-color: #1e1e1e;
-}
-
-.dark-mode #contact {
-    background-color: #1e1e1e;
-}       
-
-.dark-mode #contact a{
-    color: #1e1e1e;
-}
-
-.dark-mode #about{
-    background-color: #1e1e1e;
-}
-.dark-mode #about h2, .dark-mode #about .about-conatiner{
-    color: white;
-}
-
-.dark-mode .read-more-btn{
-    background-color: #1e1e1e;
-    color: white;
-    border: 2px solid white;
-}
-
-/*  Header */
-header{
-    background-color: #F5F5F5;
-    
-}
-nav ul{
-    list-style-type:none;
-    padding:0;
-    margin:0;
-    display: flex;
-   justify-content: space-between;
-
-}
-
-nav ul a{
-    color: #333;
-    padding: 14px 16px;
-    display: block;
-    padding: 20px;
-}
-
-nav ul a:hover{
-    background-color: #DAD2FF;
-}
-
-
-
-/*  Intro */
-
-#home{
-    height: 70%;
+    font-family: monospace, Courier, monospace;
+    background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content:center;
+    justify-content: center;
+    height: 100vh;
     align-items: center;
-    font-size: larger;
 }
 
-#home a{
-    text-decoration: none;
-    color: white;
-    padding: 15px;
-    background-color: #4B164C;
+.game-container{
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
 }
 
-
-#home a:hover{
-    opacity:0.6;
-}
-
-
-/*  about */
-
-#about{
-    /* height: 40%; */
-    background-color: #DAD2FF;
-    padding:2rem;
-
-}
-
-#about h2{
-    color: #333;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.about-conatiner{
+#board{
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Adjust min width as needed */
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
 }
 
-.read-more-btn{
-    background-color: #DAD2FF;
-    padding: 0.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    border: 2px solid #4B164C;
-    margin: 1rem 0;
+.controls{
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.controls button{
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls div{
+  margin-top: 0.5rem;
+}
+
+.card {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-.read-more-btn:hover{
-    background-color: #4B164C;
-    color: white;
+.card img {
+    width: 90px;
+    height: 90px;
+}
+  
+.hidden {
+    display: none;
+}
+  
+footer  {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #333;
+  text-align: center;
+  bottom: 0;
+  position: fixed;
 }
 
-.progress-bar {
-    width: 100%;
-    background: #ddd;
-    height: 10px;
-    border-radius: 5px;
-    overflow: hidden;
+
+footer a{
+  color: #fff;
+  text-decoration: none;
+} 
+
+
+/* Responsive design */
+
+@media (max-width: 500px) {
+
+  body {
+    height: auto;
+  }
+
+  .game-container {
+    width: 95%;
+    height: auto;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  #board {
+    grid-template-columns: repeat(3, auto);
+    gap: 0.5rem;
+  }
+
+.card {
+    width: 70px; /* Reduce card size */
+    height: 70px;
 }
 
-.progress {
-    height: 100%;
-    background: #4B164C;
-    width: 0;
-    transition: width 1.5s ease-in-out; /* Smooth animation */
+.card img{
+  width: 70px;
+  height: 70px;
 }
 
+.controls{
+  flex-direction: column; 
+  align-items: center;}
 
+.controls button{
+  width: 100%;}
 
-/*  projects */
-
-#projects{
-    background-color: antiquewhite;
-    padding: 1.5em;
-    font-weight: 500;
-}
-
-.projects-div{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min width as needed */
-        grid-auto-rows: auto; /* Allows flexible row heights */
-        gap: 2rem;
-        justify-content: center;
-        margin-top: 20px;
-}
-
-.project{
-    color: #333;
-}
-
-.project img{
-    width: 250px;
-    max-height: 250px;
-    object-fit:contain;
-    border-radius: 0.5rem;
-}
-
-.project-a {
-    text-decoration: none;
-    color: #333;
-    padding:0.5rem;
-    margin-top:0.7rem;
-    background-color:white;
-}
-
-.project-a:hover{
-    cursor: pointer;
-    opacity:0.8;
-}
-
-/*  contact */
-
-#contact{
-    padding: 0;
-    margin: 0;
-    background-color: #4B164C;
-    color: white;
-    padding: 40px 20px; 
-    margin: 0 auto; 
-    text-align:center;
-
-}
-
-#contact a{
-    padding:0.5rem;
-    margin:0.7rem;
-    background-color:white;
-    border-radius:0.30rem
-}
-
-#contact a:hover{
-   opacity:0.8;
+footer{
+  position: relative;
+  margin-top: 1rem;}
 }
