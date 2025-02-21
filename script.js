@@ -1,132 +1,181 @@
-const gameBoard = document.getElementById("board");
-const startBtn = document.getElementById("startBtn")
-const timeDisplay = document.getElementById("timeDisplay")
-const moveCountDisplay = document.getElementById("moveCount")
-
-/**  Set the arrays for the cards  and the variables **/
-let cards =[];
-let flippedCards = [];
-let matchedCards =[];
-let moves =0;
-let timer;
-let timeElapsed =0;
-
-const backImg= "images/back-img.png";
-const images= [
-    "images/img1.png",
-    "images/img2.png",
-    "images/img3.png",
-    "images/img4.png",
-    "images/img5.png",
-    "images/img6.png",
-    "images/img7.png",
-    "images/img8.png",
-];
-
-let cardImages =[...images, ...images]
+document.addEventListener("DOMContentLoaded", function () {
+    initializeDarkMode();
+    initializeBackToTopButton();
+    initializeSmoothScrolling();
+    initializeTypingEffect();
+    initializeProjectHoverEffect();
+    initializeSkillProgressBars();
+    initializeReadMoreButton();
+});
 
 
-/** Function to generate the game board with random cards **/
+function initializeDarkMode() {
+    // create the button
+    const darkModeToggle = document.createElement("button");
+    darkModeToggle.textContent = "Dark Mode";
+    darkModeToggle.style.position ="fixed";
+    darkModeToggle.style.top = "4rem";
+    darkModeToggle.style.right = "0.5rem";
+    darkModeToggle.style.padding = "1rem";
+    darkModeToggle.style.backgroundColor ="#4B164C";
+    darkModeToggle.style.color = "#fff";
+    darkModeToggle.style.border = "none";
+    darkModeToggle.style.cursor = "pointer";
+    document.body.appendChild(darkModeToggle);
 
+    // create an i element to add the icon to it
+    const iElementDarkMode = document.createElement("i")
+    iElementDarkMode.classList.add("fa-solid", "fa-lightbulb");
+    iElementDarkMode.style.marginLeft = "0.5rem";
+    darkModeToggle.appendChild(iElementDarkMode)
 
-/**   function to huffle the cards **/
-function shuffle(array) {
-    return array.sort(()=> Math.random()-0.5);
-};
-
-/** Function to create a game board **/
-
-function createBoard(imgSrc, index){
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.dataset.image =imgSrc;
-    card.innerHTML =` <img src ="${backImg}" class="card-back" >
-    <img src="${imgSrc}" class = "card-front hidden" >`
-    card.dataset.index = index;
-    card.addEventListener("click", flipCard);
-    gameBoard.appendChild(card);
-    cards.push({card, index});
-}
-
-/**  function to create the cards **/
-
-function createCards(){
-    for (let i = 0; i < cardImages.length; i++){
-        createBoard(cardImages[i], i);
-    }
+    darkModeToggle.addEventListener("click", ()=>{
+        document.body.classList.toggle("dark-mode");  
+    });
 }
 
 
+function initializeBackToTopButton() { 
+    // create the back to top btn
+    const backToTop= document.createElement("button");
+    backToTop.textContent = "Back to top";
+    backToTop.style.position ="fixed";
+    backToTop.style.bottom = "1rem";
+    backToTop.style.right = "1rem";
+    backToTop.style.padding = "0.7rem";
+    backToTop.style.backgroundColor ="white";
+    backToTop.style.color = "#4B164C";
+    backToTop.style.border = "none";
+    backToTop.style.fontWeight ="600"
+    backToTop.style.borderRadius = "0.5rem";
+    backToTop.style.cursor = "pointer";
+    backToTop.style.display="none";
+    document.body.appendChild(backToTop);
 
-/** Function to flip the card **/
+    // create an i element to add the icon to it
+    const iElementTop = document.createElement("i")
+    iElementTop.classList.add("fa-solid", "fa-arrow-up");
+    iElementTop.style.marginLeft = "0.5rem";
+    backToTop.appendChild(iElementTop);
+    
+    // add event listener to scroll to top
+    window.addEventListener("scroll", () =>{
+        if(window.scrollY > 200){
+            backToTop.style.display="block";
+        } else{
+            backToTop.style.display="none";
+        }
+        });
+    backToTop.addEventListener("click", ()=>{
+            window.scrollTo({top: 0, behavior: "smooth" });
+        });
 
-function flipCard(){
-    if (flippedCards.length <2 && !this.classList.contains("matched") && !flippedCards.includes(this)){
-        this.classList.add("flipped");
+}
 
-        this.querySelector(".card-back").classList.add("hidden");
-        this.querySelector(".card-front").classList.remove("hidden");
-        flippedCards.push(this);
+//Smooth Scrolling for Nav Links
+function initializeSmoothScrolling() {
+    document.querySelectorAll("nav ul a").forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+        });
+    });
+}
 
-        if(flippedCards.length === 2){
-            setTimeout(checkMatch, 800);
+// Typing Effect for Intro Section
+function initializeTypingEffect() {
+    const introText = "Front-End Developer | HTML, CSS, JavaScript, and Python.";
+    let i = 0;
+
+    function typeEffect() {
+        if (i < introText.length) {
+            document.getElementById("intro-text").textContent += introText.charAt(i);
+            i++;
+            setTimeout(typeEffect, 50);
         }
     }
+
+    typeEffect(); // Call function to start typing effect
 }
 
-/** Function to check if the two flipped cards match **/
+// Hover Effect for Project Images
+function initializeProjectHoverEffect() {
+    document.querySelectorAll(".project img").forEach(img => {
+        img.addEventListener("mouseover", () => {
+            img.style.transform = "scale(1.1)";
+            img.style.transition = "0.3s ease-in-out"; // Fixed missing 's'
+        });
+        img.addEventListener("mouseleave", () => {
+            img.style.transform = "scale(1)";
+        });
+    });
+}
 
-function checkMatch(){
-    let [card1, card2]= flippedCards;
+// Skill Progress Bars
 
-    if(card1.dataset.image === card2.dataset.image){
-        card1.classList.add("matched");
-        card2.classList.add("matched");
-        matchedCards.push(card1, card2);
-    } else{
-        setTimeout(() => {
-            card1.classList.remove("flipped");
-            card2.classList.remove("flipped");
+function initializeSkillProgressBars() {
+    const skills = [
+        { name: "HTML", level: 90 },
+        { name: "CSS", level: 85 },
+        { name: "JavaScript", level: 75 },
+        { name: "Python", level: 65 },
+        { name: "APIs", level: 60 },
+        { name: "Version Control", level: 70 },
+        { name: "UX/UI Design", level: 70 }
+    ];
 
-            card1.querySelector(".card-front").classList.add("hidden");
-            card2.querySelector(".card-front").classList.add("hidden");
-
-            card1.querySelector(".card-back").classList.remove("hidden");
-            card2.querySelector(".card-back").classList.remove("hidden");
-        }, 500);
+    const skillsContainer = document.querySelector(".skills");
+    if (!skillsContainer) {
+        console.error("Error: Skills container not found.");
+        return;
     }
-    flippedCards = [];
-    moves++;
-    moveCountDisplay.textContent = moves;
 
-    if (matchedCards.length === cardImages.length){
-        clearInterval(timer);
-        alert(`Congratulations! You've won the game in ${moves} moves and ${timeElapsed} secons`);
-    }
+    skillsContainer.innerHTML = `<h3>Skills:</h3>`;
+
+    skills.forEach(skill => {
+        const skillDiv = document.createElement("div");
+        skillDiv.classList.add("skill");
+
+        skillDiv.innerHTML = `
+            <p>${skill.name}</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 0%;" data-width="${skill.level}%"></div>
+            </div>
+        `;
+
+        skillsContainer.appendChild(skillDiv);
+    });
+
+    // Animate Progress Bars
+    setTimeout(() => {
+        document.querySelectorAll(".progress").forEach(progressBar => {
+            progressBar.style.transition = "width 1s ease-in-out";
+            progressBar.style.width = progressBar.getAttribute("data-width");
+        });
+    }, 500);
 }
 
 
-/** Function to start the game **/
 
-function startGame(){
-    gameBoard.innerHTML='';  // Clear the board before creating new cards
-    moves = 0;
-    timeElapsed = 0;
-    moveCountDisplay.textContent = moves;
-    timeDisplay.textContent = timeElapsed;
-    matchedCards= [];
-    flippedCards = [];
-    cards = [];  
+// Read More Button
 
+function initializeReadMoreButton(){
+    const experience = document.querySelector(".experience");
+    const readMoreButton = document.createElement("button");
+    readMoreButton.textContent = "Read More";
+    readMoreButton.classList.add("read-more-btn");
 
-    cardImages= shuffle([...images, ...images]) // Shuffle the cards before starting the game
-    createCards();
-    clearInterval(timer);
-    timer = setInterval(()=> {
-        timeElapsed++;
-        timeDisplay.textContent = timeElapsed;
-    }, 1000);
-}
+    let isExpanded = false;
+    const fullText = experience.innerHTML;
+    const shortText = fullText.split("<br>")[0] + "...";
+    experience.innerHTML = shortText;
+    experience.appendChild(readMoreButton);
 
-/** Start the game when the start button is clicked **/
-startBtn.addEventListener("click", startGame);
+    readMoreButton.addEventListener("click", () => {
+        isExpanded =!isExpanded;
+        experience.innerHTML = isExpanded ? fullText :shortText;
+        experience.appendChild(readMoreButton);
+        readMoreButton.textContent = isExpanded? "Read Less" : "Read More";
+    });
+};
