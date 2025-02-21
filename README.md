@@ -23,7 +23,7 @@ https://portfolio-kappa-sooty-41.vercel.app/
 ![screenshot of project section](https://github.com/EmanAIH/Portfolio/blob/main/images/projects-section.PNG)
 
 
-## 📬 Contact  
+##  Contact  
 Feel free to connect with me:  
 - LinkedIn: https://www.linkedin.com/in/eman-a-1668b1160/
 
